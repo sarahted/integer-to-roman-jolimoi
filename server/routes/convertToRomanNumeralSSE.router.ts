@@ -3,15 +3,18 @@ import { Request, Response } from "express";
 import { validateNumeralParameter } from "../middlewares/validateNumeralParameter.middleware";
 import { convertToRomanNumeral } from "../services/convertToRomanNumeral.service";
 
-const convertToRomanNumeralRouter = express.Router();
+const convertToRomanNumeralRouterSSE = express.Router();
 
-convertToRomanNumeralRouter.get(
+convertToRomanNumeralRouterSSE.get(
   "/convert/:num",
   validateNumeralParameter,
   (req: Request, res: Response) => {
+    res.write("data: working on solution ! Please wait ...\n\n");
     const result = convertToRomanNumeral(parseInt(req.params.num));
-    return res.status(200).send({ data: result });
+    setTimeout(() => {
+      return res.status(200).write(`data: ${result}\n\n`);
+    }, 1000);
   }
 );
 
-export { convertToRomanNumeralRouter };
+export { convertToRomanNumeralRouterSSE };

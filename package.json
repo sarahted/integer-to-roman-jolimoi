@@ -5,7 +5,8 @@
     "dev:back": "nodemon ./server/app.ts",
     "dev": "concurrently \"tsc -w\" \"serve client\" \"nodemon server/app.ts\"",
     "test": "jest",
-    "watch": "jest --watch"
+    "watch": "jest --watch",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",

@@ -7,7 +7,8 @@ export const validateNumeralParameter = (
 ) => {
   const num = parseInt(req.params.num);
   if (!Number.isInteger(num) || num < 1 || num > 100) {
-    return res.status(400).send({
+    res.status(400);
+    return res.send({
       error:
         "The number passed as parameter is not between 1 and 100. Can not be supported by this application",
     });
