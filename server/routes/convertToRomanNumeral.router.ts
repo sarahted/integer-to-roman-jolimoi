@@ -3,9 +3,9 @@ import { Request, Response } from "express";
 import { validateNumeralParameter } from "../middlewares/validateNumeralParameter.middleware";
 import { convertToRomanNumeral } from "../services/convertToRomanNumeral.service";
 
-const router = express.Router();
+const convertToRomanNumeralRouter = express.Router();
 
-router.get(
+convertToRomanNumeralRouter.get(
   "/convert/:num",
   validateNumeralParameter,
   (req: Request, res: Response) => {
@@ -14,4 +14,4 @@ router.get(
   }
 );
 
-export default router;
+export { convertToRomanNumeralRouter };

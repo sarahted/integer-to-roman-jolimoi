@@ -1,4 +1,4 @@
-import convertToRomanNumeral from "./routes/convertToRomanNumeral.router";
+import { convertToRomanNumeralRouter } from "./routes/convertToRomanNumeral.router";
 import express from "express";
 import { Express, Request, Response, NextFunction } from "express";
 
@@ -9,6 +9,6 @@ export const createServer = () => {
     res.header("Access-Control-Allow-Origin", "*");
     next();
   });
-  app.use("/v1", convertToRomanNumeral);
+  app.use("/v1", convertToRomanNumeralRouter);
   return app;
 };

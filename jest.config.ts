@@ -1,6 +1,6 @@
 import type { Config } from "jest";
 
-const jestConfig: Config = {
+const config: Config = {
   preset: "ts-jest",
   testEnvironment: "node",
   testMatch: ["**/*.test.ts"],
@@ -8,4 +8,4 @@ const jestConfig: Config = {
   forceExit: true,
 };
 
-export default jestConfig;
+export default config;

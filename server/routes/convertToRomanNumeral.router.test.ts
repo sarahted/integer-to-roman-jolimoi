@@ -3,15 +3,15 @@ import { createServer } from "../server";
 
 const app = createServer();
 describe("convert to roman numeral route", () => {
-  it("Should return 200 if number is in 1 - 100 interval", async () => {
+  it("Should return 200 if number is in 1 - 100 interval  (num = 1)", async () => {
     await supertest(app).get("/v1/convert/1").expect(200);
   });
 
-  it("Should return 400 if number is not in 1 - 100 interval", async () => {
+  it("Should return 400 if number is not in 1 - 100 interval  (num = 0)", async () => {
     await supertest(app).get("/v1/convert/0").expect(400);
   });
 
-  it("Should return 400 if number is not in 1 - 100 interval", async () => {
+  it("Should return 400 if number is not in 1 - 100 interval  (num = 101)", async () => {
     await supertest(app).get("/v1/convert/101").expect(400);
   });
 
